@@ -1,0 +1,35 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시글 작성</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/boardStyle.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/HBF.css}">
+</head>
+<body>
+    <header>
+        <h1>짱구's 팬사이트</h1>
+    </header>
+    <main>
+        <h2>짱구 게시판</h2>
+        <div class="board">
+            <div class="post">
+                <h2 class="post-title">Post Title 1</h2>
+                <p class="post-content">This is the content of the first post.</p>
+            </div>
+            <div class="post">
+                <h2 class="post-title">Post Title 2</h2>
+                <p class="post-content">This is the content of the second post.</p>
+            </div>
+        </div>
+        <div class="pagination">
+            <a href="#" class="page-link">1</a>
+            <a href="#" class="page-link">2</a>
+            <a href="#" class="page-link">3</a>
+        </div>
+    </main>
+    <footer>
+        <p>© 2023 JJangu. All rights reserved.</p>
+    </footer>
+</body>
+</html>

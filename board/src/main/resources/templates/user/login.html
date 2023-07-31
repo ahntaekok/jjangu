@@ -1,0 +1,29 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인 페이지</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/userStyle.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/HBF.css}">
+  <script th:src="@{/js/loginScript.js}" type="text/javascript"></script>
+</head>
+<body>
+  <header>
+    <h1>짱구's 팬사이트</h1>
+  </header>
+  <main>
+    <div class="container">
+      <form method="post" class="login-form" action="loginOk">
+        <h2>로그인</h2>
+        <input type="text" placeholder="ID를 입력하세요" name="u_id" required>
+        <input type="password" placeholder="비밀번호를 입력하세요" name="u_pw" required>
+        <button type="submit">로그인</button>
+        <button type="button" onclick="signUp()">회원가입</button>
+      </form>
+    </div>
+  </main>
+  <footer>
+    <p>© 2023 JJangu. All rights reserved.</p>
+  </footer>
+</body>
+</html>
