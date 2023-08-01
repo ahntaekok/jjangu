@@ -35,3 +35,12 @@
 .page-link:hover {
     background-color: #f1f1f1;
 }
+
+button {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

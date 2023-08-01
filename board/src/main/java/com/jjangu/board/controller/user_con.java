@@ -28,7 +28,7 @@ public class user_con {
         System.out.println("아이디 : "+ param.get("u_id"));
         System.out.println("비밀번호 : "+ param.get("u_pw"));
 
-        return "board/boardWrite";
+        return "board/boardList";
     }
 
     @RequestMapping("/signUp")

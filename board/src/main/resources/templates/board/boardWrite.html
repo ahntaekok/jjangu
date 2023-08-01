@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>게시글 작성</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/boardStyle.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/boardWriteStyle.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/css/HBF.css}">
 </head>
 <body>
@@ -11,21 +11,19 @@
         <h1>짱구's 팬사이트</h1>
     </header>
     <main>
-        <h2>짱구 게시판</h2>
-        <div class="board">
-            <div class="post">
-                <h2 class="post-title">Post Title 1</h2>
-                <p class="post-content">This is the content of the first post.</p>
-            </div>
-            <div class="post">
-                <h2 class="post-title">Post Title 2</h2>
-                <p class="post-content">This is the content of the second post.</p>
-            </div>
-        </div>
-        <div class="pagination">
-            <a href="#" class="page-link">1</a>
-            <a href="#" class="page-link">2</a>
-            <a href="#" class="page-link">3</a>
+        <div class="container">
+            <h2>게시글 작성</h2>
+            <form id="post-form">
+                <label for="title">제목:</label>
+                <input type="text" id="title" name="title" required>
+                <label for="author">작성자:</label>
+                <input type="text" id="author" name="author" required>
+                <label for="content">내용:</label>
+                <textarea id="content" name="content" rows="8" required></textarea>
+                <label for="attachment">첨부 파일:</label>
+                <input type="file" id="attachment" name="attachment">
+                <button type="submit">게시글 작성</button>
+            </form>
         </div>
     </main>
     <footer>
