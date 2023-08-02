@@ -8,12 +8,11 @@
 </head>
 <body>
     <header>
-        <h1>짱구's 팬사이트</h1>
+        <div th:include="HF/header.html :: header"></div>
     </header>
     <main>
-        <h2>짱구 게시판</h2>
         <div class="board">
-        <p align="right"><button type="button" onclick="location.href='../board/write'">작성</button></p>
+        <h2>짱구 게시판</h2><br>
             <div class="post">
                 <h2 class="post-title">Post Title 1</h2>
                 <p class="post-content">This is the content of the first post.</p>
@@ -22,6 +21,8 @@
                 <h2 class="post-title">Post Title 2</h2>
                 <p class="post-content">This is the content of the second post.</p>
             </div>
+        <hr>
+        <p align="right"><button type="button" onclick="location.href='../board/write'">작성</button></p>
         </div>
         <div class="pagination">
             <a href="#" class="page-link">1</a>
@@ -30,7 +31,7 @@
         </div>
     </main>
     <footer>
-        <p>© 2023 JJangu. All rights reserved.</p>
+        <div th:include="HF/footer.html :: footer"></div>
     </footer>
 </body>
 </html>

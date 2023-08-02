@@ -8,11 +8,11 @@
 </head>
 <body>
     <header>
-        <h1>짱구's 팬사이트</h1>
+        <div th:include="HF/header.html :: header"></div>
     </header>
     <main>
         <div class="container">
-            <h2>게시글 작성</h2>
+            <h2>게시글 작성</h2><br>
             <form id="post-form">
                 <label for="title">제목:</label>
                 <input type="text" id="title" name="title" required>
@@ -27,7 +27,7 @@
         </div>
     </main>
     <footer>
-        <p>© 2023 JJangu. All rights reserved.</p>
+        <div th:include="HF/footer.html :: footer"></div>
     </footer>
 </body>
 </html>
