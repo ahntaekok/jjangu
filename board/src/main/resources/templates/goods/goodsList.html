@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <h1>짱구's 팬사이트</h1>
+        <div th:include="HF/header.html :: header"></div>
     </header>
     <main>
         <h1>상품 목록</h1>
@@ -19,15 +19,12 @@
         </div>
 
         <script>
-        // JavaScript로 상품 데이터를 생성합니다. (실제로는 서버에서 데이터를 받아와야 합니다.)
         const products = [
           { name: '상품 1', price: 10000, image: 'https://placekitten.com/200/150' },
           { name: '상품 2', price: 20000, image: 'https://placekitten.com/201/150' },
           { name: '상품 3', price: 15000, image: 'https://placekitten.com/200/151' },
-          // 추가적인 상품 데이터를 배열에 추가합니다.
         ];
 
-        // JavaScript로 상품 목록을 동적으로 추가하는 함수를 만듭니다.
         function renderProductList() {
           const productListContainer = document.getElementById('product-list');
 
@@ -60,7 +57,7 @@
       </script>
     </main>
     <footer>
-        <p>© 2023 JJangu. All rights reserved.</p>
+        <div th:include="HF/footer.html :: footer"></div>
     </footer>
 </body>
 </html>

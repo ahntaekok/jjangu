@@ -1,16 +1,5 @@
-body, h1, h2, h3, p, label, button, input, textarea, select {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
-body {
-  background-color: #f2f2f2;
-}
-
 .board {
-    margin: 0 auto;
+    margin: 0 50;
     margin-top: 50;
     background-color: #fff;
     border-radius: 8px;
@@ -56,11 +45,4 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-}
-
-@media screen and (max-width: 600px) {
-  .container {
-    margin: 20px auto;
-    padding: 10px;
-  }
 }
