@@ -3,16 +3,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>짱구 게시판</title>
+    <div th:replace="/HFN/header.html :: headFragment"></div>
     <link rel="stylesheet" type="text/css" th:href="@{/css/boardStyle.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{/css/HBF.css}">
 </head>
 <body>
-    <header>
-        <div th:include="HF/header.html :: header"></div>
-    </header>
-    <main>
-        <div class="board">
-        <h2>짱구 게시판</h2><br>
+    <div th:replace="/HFN/nav.html :: navFragment"></div>
+
+        <h2 align="center" style="margin: 30">짱구 게시판</h2>
+    <div class="board">
+            <form class="form-inline my-2 my-lg-0" style="justify-content: right">
+                <input class="form-control mr-sm-2" type="search" placeholder="제목을 입력하세요" aria-label="Search">
+                <button type="submit">검색</button>
+            </form><hr>
+
             <div class="post">
                 <h2 class="post-title">Post Title 1</h2>
                 <p class="post-content">This is the content of the first post.</p>
@@ -30,9 +33,9 @@
             <a href="#" class="page-link">3</a>
         </div>
     <br>
-    </main>
+
     <footer>
-        <div th:include="HF/footer.html :: footer"></div>
+        <div th:include="HFN/footer.html :: footer"></div>
     </footer>
 </body>
 </html>

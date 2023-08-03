@@ -4,12 +4,12 @@
     <title>짱구's 팬사이트</title>
     <!-- 부트스트랩 링크 추가 -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" th:href="@{/css/HBF.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}">
+    <div th:replace="/HFN/header.html :: headFragment"></div>
 </head>
 <body>
-  <header>
-    <div th:include="HF/header.html :: header"></div>
-  </header>
+  <div th:replace="/HFN/nav.html :: navFragment"></div>
+
   <div id="mainCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
@@ -35,14 +35,13 @@
     </a>
   </div>
   <footer>
-    <div th:include="HF/footer.html :: footer"></div>
+    <div th:include="HFN/footer.html :: footer"></div>
   </footer>
 <!-- 부트스트랩 JS 및 추가 스크립트 -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
-  // 5초마다 자동 슬라이드
   $('.carousel').carousel({
     interval: 5000
   });

@@ -3,31 +3,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>게시글 작성</title>
+    <div th:replace="/HFN/header.html :: headFragment"></div>
     <link rel="stylesheet" type="text/css" th:href="@{/css/boardWriteStyle.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{/css/HBF.css}">
 </head>
 <body>
-    <header>
-        <div th:include="HF/header.html :: header"></div>
-    </header>
-    <main>
-        <div class="container">
+    <div th:replace="/HFN/nav.html :: navFragment"></div>
+
+    <div class="container">
             <h2>게시글 작성</h2><br>
             <form id="post-form">
-                <label for="title">제목:</label>
-                <input type="text" id="title" name="title" required>
-                <label for="author">작성자:</label>
-                <input type="text" id="author" name="author" required>
-                <label for="content">내용:</label>
-                <textarea id="content" name="content" rows="8" required></textarea>
-                <label for="attachment">첨부 파일:</label>
-                <input type="file" id="attachment" name="attachment">
-                <button type="submit">게시글 작성</button>
-            </form>
-        </div>
-    </main>
+            <label for="title">제목:</label>
+            <input type="text" id="title" name="title" required>
+            <label for="author">작성자:</label>
+            <input type="text" id="author" name="author" required>
+            <label for="content">내용:</label>
+            <textarea id="content" name="content" rows="8" required></textarea>
+            <label for="attachment">첨부 파일:</label>
+            <input type="file" id="attachment" name="attachment">
+            <button type="submit">게시글 작성</button>
+        </form>
+    </div>
+
     <footer>
-        <div th:include="HF/footer.html :: footer"></div>
+        <div th:include="HFN/footer.html :: footer"></div>
     </footer>
 </body>
 </html>
