@@ -2,40 +2,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>짱구 게시판</title>
-    <div th:replace="/HFN/header.html :: headFragment"></div>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/boardStyle.css}">
+    <title>짱구's 게시판</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/list.css}">
 </head>
 <body>
-    <div th:replace="/HFN/nav.html :: navFragment"></div>
+    <div th:replace="/HF/header.html :: body"></div>
 
-        <h2 align="center" style="margin: 30">짱구 게시판</h2>
+    <h2 class="title" align="center">짱구 게시판</h2>
     <div class="board">
-            <form class="form-inline my-2 my-lg-0" style="justify-content: right">
-                <input class="form-control mr-sm-2" type="search" placeholder="제목을 입력하세요" aria-label="Search">
-                <button type="submit">검색</button>
-            </form><hr>
-
-            <div class="post">
-                <h2 class="post-title">Post Title 1</h2>
-                <p class="post-content">This is the content of the first post.</p>
-            </div>
-            <div class="post">
-                <h2 class="post-title">Post Title 2</h2>
-                <p class="post-content">This is the content of the second post.</p>
-            </div>
+        <form class="search">
+            <input type="search" placeholder="제목을 입력하세요" aria-label="Search">
+            &nbsp;
+            <button type="submit">검색</button>
+            &nbsp;
+            <button type="button" onclick="location.href='../board/write'">작성</button>
+        </form>
         <hr>
-        <p align="right"><button type="button" onclick="location.href='../board/write'">작성</button></p>
+        <div class="post">
+            <h2 class="post-title">Post Title 1</h2>
+            <p class="post-content">This is the content of the first post.</p>
         </div>
-        <div class="pagination">
+        <div class="post">
+            <h2 class="post-title">Post Title 2</h2>
+            <p class="post-content">This is the content of the second post.</p>
+        </div>
+        <hr>
+    </div>
+    <div class="pagination">
             <a href="#" class="page-link">1</a>
             <a href="#" class="page-link">2</a>
             <a href="#" class="page-link">3</a>
         </div>
-    <br>
-
-    <footer>
-        <div th:include="HFN/footer.html :: footer"></div>
-    </footer>
+        <br>
+    <div th:replace="HF/footer.html :: footer"></div>
 </body>
 </html>
