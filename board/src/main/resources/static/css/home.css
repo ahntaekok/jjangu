@@ -15,7 +15,6 @@
 		padding: 0;
 		border: 0;
 		font-size: 100%;
-		font: inherit;
 		vertical-align: baseline;
 	}
 
@@ -1567,10 +1566,6 @@
 
 	}
 
-	body {
-		background: #fff;
-	}
-
 		body.is-loading *, body.is-loading *:before, body.is-loading *:after {
 			-moz-animation: none !important;
 			-webkit-animation: none !important;
@@ -1629,7 +1624,7 @@
 		}
 
 	body {
-		background-color: #fff;
+		background-color: #f8f8ff;
 		color: #444;
 	}
 
@@ -3724,7 +3719,6 @@
 		#header > .logo {
 			display: inline-block;
 			height: inherit;
-			left: 1.25em;
 			line-height: inherit;
 			margin: 0;
 			padding: 0;
@@ -3963,10 +3957,6 @@
 			#menu .close:before {
 				content: '\f00d';
 				font-size: 1.25rem;
-			}
-
-			#menu .close:hover {
-				color: #000;
 			}
 
 			@media screen and (max-width: 736px) {

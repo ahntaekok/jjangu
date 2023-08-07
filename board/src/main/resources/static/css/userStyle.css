@@ -7,13 +7,14 @@
 
 h1{
     font-size: 3.2rem;
+    margin: 0;
 }
 p{
   font-size: 1.2rem;
 }
 /* Sections */
 .login_section{
-    min-height: 100vh;
+    min-height: 70vh;
     display: flex;
     align-items:center;
     position: relative;
@@ -98,4 +99,18 @@ form{
 
 span{
     font-size: 1.2rem;
+}
+
+.btn-primary {
+    background-color: black;
+    border: 0;
+}
+
+.btn-primary:hover {
+    background-color: gray;
+    border: 0;
+}
+
+.p_25{
+   padding: 2.4rem!important;
 }

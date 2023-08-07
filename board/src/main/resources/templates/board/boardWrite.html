@@ -3,11 +3,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>게시글 작성</title>
-    <div th:replace="/HFN/header.html :: headFragment"></div>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/list.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/css/boardWriteStyle.css}">
 </head>
 <body>
-    <div th:replace="/HFN/nav.html :: navFragment"></div>
+    <div th:replace="/HF/header.html :: body"></div>
 
     <div class="container">
             <h2>게시글 작성</h2><br>
@@ -20,12 +21,14 @@
             <textarea id="content" name="content" rows="8" required></textarea>
             <label for="attachment">첨부 파일:</label>
             <input type="file" id="attachment" name="attachment">
-            <button type="submit">게시글 작성</button>
+            <div class="write_button">
+                <button type="submit">게시글 작성</button>
+                    &nbsp;
+                <button type="button" onclick="location.href='list'">취소</button>
+            </div>
         </form>
     </div>
 
-    <footer>
-        <div th:include="HFN/footer.html :: footer"></div>
-    </footer>
+    <div th:replace="HF/footer.html :: footer"></div>
 </body>
 </html>

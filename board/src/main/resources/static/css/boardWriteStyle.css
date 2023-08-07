@@ -8,7 +8,7 @@
 }
 
 form {
-  display: flex;
+  display: contents;
   flex-direction: column;
 }
 
@@ -29,19 +29,6 @@ input, textarea {
   height: 150px;
 }
 
-button {
-  padding: 12px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
 input[type="file"] {
   border: none;
   padding: 0;
@@ -49,7 +36,16 @@ input[type="file"] {
   box-shadow: none;
 }
 
-label, input, textarea, button {
+label, input, textarea {
   width: 100%;
   resize: none;
+}
+
+button {
+    width: 40%
+}
+
+.write_button{
+    display: flex;
+    justify-content: center;
 }

@@ -1,32 +1,16 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>짱구's 팬사이트</title>
-    <!-- 부트스트랩 링크 추가 -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/css/list.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}">
 </head>
 <body>
-<!--  <div th:replace="/HF/header.html :: body"></div>-->
-<!-- Header -->
-<header id="header">
-  <a th:href="@{/home}" class="logo"><strong>짱구's</strong> 팬사이트</a>
-  <nav>
-    <a href="#menu">Menu</a>
-  </nav>
-</header>
-<!-- Nav -->
-<nav id="menu">
-  <ul class="links">
-    <li><a th:href="@{/home}">Home</a></li>
-    <li><a th:href="@{/board/list}">Board</a></li>
-    <li><a th:href="@{/goods/list}">Goods</a></li>
-  </ul>
-</nav>
+  <div th:replace="/HF/header.html :: body"></div>
+
   <!-- Banner -->
-  <section class="banner full">
+  <section class="banner full" style="font-family: 'Poppins', sans-serif;">
     <article>
       <img th:src="@{images/image1.jpg}"  alt="" />
       <div class="inner">
@@ -77,12 +61,7 @@
   </div>
   <div th:replace="HF/footer.html :: footer"></div>
 
-  <!-- Scripts -->
-  <script th:src="@{js/jquery.min.js}"></script>
-<!--  <script th:src="@{js/home/jquery.scrollex.min.js}"></script>-->
-  <script th:src="@{js/jquery.scrolly.min.js}"></script>
-  <script th:src="@{js/skel.min.js}"></script>
-  <script th:src="@{js/util.js}"></script>
-  <script th:src="@{js/home/main.js}"></script>
+<!-- script -->
+  <script th:src="@{js/jquery.scrollex.min.js}"></script>
 </body>
 </html>
