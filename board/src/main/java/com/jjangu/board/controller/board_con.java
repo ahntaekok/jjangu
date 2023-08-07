@@ -1,17 +1,25 @@
 package com.jjangu.board.controller;
 
 import com.jjangu.board.dto.bDto;
+import com.jjangu.board.service.boardService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 
 @RequestMapping("/board")
 @Controller
 public class board_con {
+/*
+    @Autowired
+    private boardService service;
+*/
+    @Autowired
+    private HttpSession session;
 
     @ResponseBody
     @RequestMapping("/")
@@ -36,6 +44,6 @@ public class board_con {
         System.out.println("내용 : "+ param.get("b_content"));
         System.out.println("b_id : "+ dto.getB_id());
 
-        return "board/boardWrite";
+        return "board/boardList";
     }
 }
