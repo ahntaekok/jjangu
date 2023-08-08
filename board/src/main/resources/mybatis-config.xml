@@ -4,7 +4,7 @@
 <configuration>
     <mappers>
         <!--    SQL 저장파일 (+경로) -->
-        <mapper resource="mybatis/mappers/memmap.xml"/>
-        <mapper resource="mybatis/mappers/placemap.xml"/>
+        <mapper resource="mappers/boardDao.xml"/>
+        <mapper resource="mappers/placemap.xml"/>
     </mappers>
 </configuration>

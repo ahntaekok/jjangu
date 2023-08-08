@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<mapper namespace="com.jjangu.board.dao.boardDao">
+
+    <!-- SELECT 문 예시 -->
+    <select id="boardSelect" resultType="com.jjangu.board.dto.boardDto">
+        SELECT * FROM board
+    </select>
+
+    <!-- INSERT 문 -->
+    <insert id="boardWrite" parameterType="hashmap">
+        INSERT INTO board (b_title, b_content, b_created)
+        VALUES (#{b_title}, #{b_content}, sysdate())
+    </insert>
+
+    <!-- UPDATE 문 -->
+    <update id="boardUpdate" parameterType="hashmap">
+        UPDATE board
+        SET username = #{username}, email = #{email}
+        WHERE id = #{id}
+    </update>
+
+    <!-- DELETE 문 -->
+    <delete id="boardDelete" parameterType="hashmap">
+        DELETE FROM board
+        WHERE b_id = #{b_id}
+    </delete>
+
+</mapper>

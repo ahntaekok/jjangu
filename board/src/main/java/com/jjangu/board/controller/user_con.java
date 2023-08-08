@@ -1,6 +1,6 @@
 package com.jjangu.board.controller;
 
-import com.jjangu.board.dto.bDto;
+import com.jjangu.board.dto.boardDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,7 +24,7 @@ public class user_con {
     @RequestMapping("/loginOk")
     public String loginOk(@RequestParam HashMap<String, String> param){
 
-        bDto dto = new bDto();
+        boardDto dto = new boardDto();
         System.out.println("아이디 : "+ param.get("u_id"));
         System.out.println("비밀번호 : "+ param.get("u_pw"));
 

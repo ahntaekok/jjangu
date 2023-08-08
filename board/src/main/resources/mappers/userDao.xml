@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<mapper namespace="com.jjangu.board.dao.boardDao">
+
+    <!-- SELECT 문 예시 -->
+    <select id="selectMemberById" resultType="com.example.model.Member">
+        SELECT id, username, email
+        FROM members
+        WHERE id = #{id}
+    </select>
+
+    <!-- INSERT 문 예시 -->
+    <insert id="insertMember" parameterType="com.example.model.Member">
+        INSERT INTO members (username, email)
+        VALUES (#{username}, #{email})
+    </insert>
+
+    <!-- UPDATE 문 예시 -->
+    <update id="updateMember" parameterType="com.example.model.Member">
+        UPDATE members
+        SET username = #{username}, email = #{email}
+        WHERE id = #{id}
+    </update>
+
+    <!-- DELETE 문 예시 -->
+    <delete id="deleteMember" parameterType="int">
+        DELETE FROM members
+        WHERE id = #{id}
+    </delete>
+
+</mapper>
