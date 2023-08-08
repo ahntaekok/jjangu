@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-@Service("boardService")
+@Service
 @Slf4j
 public class boardServiceImpl implements boardService {
     @Autowired
