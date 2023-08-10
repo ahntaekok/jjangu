@@ -13,8 +13,11 @@ import java.util.HashMap;
 @Service
 @Slf4j
 public class boardServiceImpl implements boardService {
-    @Autowired
     private boardDao dao;
+    @Autowired
+    public boardServiceImpl(boardDao dao){
+        this.dao = dao;
+    }
 
     @Override
     public ArrayList<boardDto> boardSelect(HashMap<String, String> param) {

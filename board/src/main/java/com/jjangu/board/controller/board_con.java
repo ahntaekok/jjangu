@@ -16,9 +16,12 @@ import java.util.HashMap;
 @RequestMapping("/board")
 @Controller
 public class board_con {
+    private boardService service;
 
     @Autowired
-    private boardService service;
+    public board_con(boardService service){
+        this.service = service;
+    }
 
     @Autowired
     private HttpSession session;
@@ -44,9 +47,6 @@ public class board_con {
 //    게시판 작성 메소드
     @RequestMapping("/writeOk")
     public String boardWriteOk(@RequestParam HashMap<String, String> param, @RequestParam(value = "b_id", defaultValue = "1") int b_id){
-
-        System.out.println("제목 : "+ param.get("b_title"));
-        System.out.println("내용 : "+ param.get("b_content"));
 
         service.boardWrite(param);
 

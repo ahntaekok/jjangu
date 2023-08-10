@@ -3,7 +3,7 @@ package com.jjangu.board;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(scanBasePackages = {"com.jjangu.board.dao.boardDao"})
+@SpringBootApplication
 public class BoardApplication {
 
 	public static void main(String[] args) {

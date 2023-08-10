@@ -1,12 +1,14 @@
 package com.jjangu.board.dao;
 
 import com.jjangu.board.dto.boardDto;
-import org.springframework.stereotype.Component;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-@Component
+@Repository
+@Mapper
 public interface boardDao {
     public ArrayList<boardDto> boardSelect(HashMap<String, String> param);
     public void boardWrite(HashMap<String, String> param);
