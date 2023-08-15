@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Date;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -14,4 +16,5 @@ public class boardDto {
     private int b_good;
     private int b_bad;
     private int user_u_id;
+    private Date b_created;
 }

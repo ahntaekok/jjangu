@@ -19,17 +19,27 @@
             <button type="button" onclick="location.href='../board/write'">작성</button>
         </form>
         <hr>
-        <div class="post">
-            <h2 class="post-title">안녕하세요!</h2>
-            <p class="post-content">신짱구</p>
-        </div>
-        <div class="post">
-            <h2 class="post-title">가입했습니다 ^^</h2>
-            <p class="post-content">훈이</p>
-        </div>
-        <div class="post">
-            <h2 class="post-title">야 신짱구 재미없어!</h2>
-            <p class="post-content">철수</p>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>닉네임</th>
+                        <th>제목</th>
+                        <th>내용</th>
+                        <th>작성일</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="board : ${boardList}">
+                        <td>[[${board.b_id}]]</td>
+                        <td>[[${board.b_id}]]</td>
+                        <td>[[${board.b_title}]]</td>
+                        <td>[[${board.b_content}]]</td>
+                        <td>[[${board.b_created}]]</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <hr>
     </div>

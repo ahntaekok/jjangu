@@ -20,8 +20,8 @@ public class boardServiceImpl implements boardService {
     }
 
     @Override
-    public ArrayList<boardDto> boardSelect(HashMap<String, String> param) {
-        return dao.boardSelect(param);
+    public ArrayList<boardDto> boardList() {
+        return dao.boardList();
     }
 
     @Override

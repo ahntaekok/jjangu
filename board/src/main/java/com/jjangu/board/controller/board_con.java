@@ -40,7 +40,8 @@ public class board_con {
 
 //    게시판 리스트 페이지
     @RequestMapping("/list")
-    public String boardList(){
+    public String boardList(Model model){
+        model.addAttribute("boardList", service.boardList());
         return "board/boardList";
     }
 
@@ -50,7 +51,7 @@ public class board_con {
 
         service.boardWrite(param);
 
-        return "board/boardList";
+        return "redirect:list";
     }
 
 //    게시판 수정 메소드
