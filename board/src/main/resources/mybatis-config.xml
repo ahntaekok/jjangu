@@ -4,5 +4,6 @@
     <mappers>
         <!--    SQL 저장파일 (+경로) -->
         <mapper resource="mappers/boardDao.xml"/>
+        <mapper resource="mappers/userDao.xml"/>
     </mappers>
 </configuration>

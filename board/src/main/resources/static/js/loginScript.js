@@ -2,8 +2,8 @@
 
 // call when focus on input
 function labelUp(input){
-    input.parentElement.children[0].setAttribute("class", "change_label");    
-}  
+    input.parentElement.children[0].setAttribute("class", "change_label");
+}
 
 // call when focus out on input
 function labelDown(input){
@@ -18,6 +18,7 @@ var eye_icon_signup = document.getElementById('eye_icon_signup');
 var eye_icon_login = document.getElementById('eye_icon_login');
 var sign_up_password = document.getElementById("signup_password");
 var login_password = document.getElementById("login_password");
+
 eye_icon_signup.addEventListener('click', ()=>{
     hideAndShowPass(eye_icon_signup, signup_password); 
 });

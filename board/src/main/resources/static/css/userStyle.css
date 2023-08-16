@@ -23,13 +23,13 @@ p{
 }
 
 .accounts_container{
-    height: 550px;
-    min-height: 550px;
+    height: 1px;
+    min-height: 780px;
     max-height: 100%;
     border-radius:10px;
     box-shadow: 8px 8px 8px rgba(0,0,0,0.1);
     background-color: #fcfcfc;
-    overflow: auto;
+    overflow: hidden;
 }
 
 

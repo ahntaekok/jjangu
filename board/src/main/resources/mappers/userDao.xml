@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-config.dtd">
-<mapper namespace="com.jjangu.board.dao.boardDao">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jjangu.board.dao.userDao">
 
     <!-- SELECT 문 예시 -->
-    <select id="selectMemberById" resultType="com.example.model.Member">
+    <select id="userList" resultType="com.jjangu.board.dto.userDto">
         SELECT id, username, email
         FROM members
         WHERE id = #{id}
     </select>
 
     <!-- INSERT 문 예시 -->
-    <insert id="insertMember" parameterType="com.example.model.Member">
-        INSERT INTO members (username, email)
-        VALUES (#{username}, #{email})
+    <insert id="userSignUp" parameterType="hashmap">
+        INSERT INTO user (u_name, u_pw, u_nickname, u_postcode, u_address, u_extraAddress, u_detailAddress, u_created)
+        VALUES (#{u_name}, #{u_pw}, #{u_nickname}, #{u_postcode}, #{u_address}, #{u_extraAddress}, #{u_detailAddress}, sysdate())
     </insert>
 
     <!-- UPDATE 문 예시 -->
-    <update id="updateMember" parameterType="com.example.model.Member">
+    <update id="userUpdate" parameterType="hashmap">
         UPDATE members
         SET username = #{username}, email = #{email}
         WHERE id = #{id}
     </update>
 
     <!-- DELETE 문 예시 -->
-    <delete id="deleteMember" parameterType="int">
-        DELETE FROM members
-        WHERE id = #{id}
+    <delete id="userDelete" parameterType="int">
+        DELETE FROM user
+        WHERE u_id = #{u_id}
     </delete>
 
 </mapper>

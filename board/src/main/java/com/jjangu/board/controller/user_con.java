@@ -1,14 +1,28 @@
 package com.jjangu.board.controller;
 
 import com.jjangu.board.dto.boardDto;
+import com.jjangu.board.service.boardService;
+import com.jjangu.board.service.userService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 
 @RequestMapping("/user")
 @Controller
 public class user_con {
+
+    private userService service;
+
+    @Autowired
+    public user_con(userService service){
+        this.service = service;
+    }
+
+    @Autowired
+    private HttpSession session;
 
     @ResponseBody
     @GetMapping("/")
@@ -24,7 +38,6 @@ public class user_con {
     @RequestMapping("/loginOk")
     public String loginOk(@RequestParam HashMap<String, String> param){
 
-        boardDto dto = new boardDto();
         System.out.println("아이디 : "+ param.get("u_id"));
         System.out.println("비밀번호 : "+ param.get("u_pw"));
 
@@ -32,16 +45,10 @@ public class user_con {
     }
 
     @RequestMapping("/signUp")
-    public String signUp(){
-        return "user/signUp";
-    }
-
-    @RequestMapping("/signUpOk")
-    public String signUpOk(@RequestParam HashMap<String, String> param){
-
-        System.out.println("아이디 : "+ param.get("u_id"));
-        System.out.println("비밀번호 : "+ param.get("u_pw"));
-        System.out.println("이메일 : "+ param.get("u_email"));
+    public String signUp(@RequestParam HashMap<String, String> param){
+        param.get("u_nickname");
+        ;
+        service.userSignUp(param);
 
         return "user/login";
     }
