@@ -11,7 +11,7 @@ import java.util.HashMap;
 @Repository
 @Mapper
 public interface userDao {
-    public ArrayList<userDto> userList();
+    public String id_check(HashMap<String, String> param);
     public void userSignUp(HashMap<String, String> param);
     public userDto userUpdate(HashMap<String, String> param);
     public void userDelete(HashMap<String, String> param);

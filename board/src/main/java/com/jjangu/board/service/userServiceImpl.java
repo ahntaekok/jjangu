@@ -22,8 +22,8 @@ public class userServiceImpl implements userService {
     }
 
     @Override
-    public ArrayList<userDto> userList() {
-        return null;
+    public String id_check(HashMap<String, String> param) {
+        return dao.id_check(param);
     }
 
     @Override

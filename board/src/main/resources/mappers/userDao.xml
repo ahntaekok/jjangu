@@ -2,11 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jjangu.board.dao.userDao">
 
-    <!-- SELECT 문 예시 -->
-    <select id="userList" resultType="com.jjangu.board.dto.userDto">
-        SELECT id, username, email
-        FROM members
-        WHERE id = #{id}
+    <select id="id_check" resultType="String">
+        select u_name
+        FROM user
+        where u_name = #{u_name}
     </select>
 
     <!-- INSERT 문 예시 -->
