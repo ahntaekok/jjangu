@@ -53,9 +53,18 @@
               <label for="cpass"  id="passwordMatchLabel">비밀번호 확인</label>
               <input type="password" name="u_pw_confirm" class="form-control" id="cpass" onfocus="labelUp(this)" onblur="labelDown(this)" required />
             </div>
-            <div class="form-group">
-              <label for="nickname">닉네임</label>
-              <input type="text" name="u_nickname" class="form-control" id="nickname" onfocus="labelUp(this)" onblur="labelDown(this)" required />
+            <div class="row">
+              <div class="col col-sm-12 col-md-12 col-lg-6 m-0">
+                <div class="form-group">
+                  <label for="signup_nick" id="signup_nick_OK">닉네임</label>
+                  <input type="text" name="u_nickname" class="form-control" id="signup_nick" onfocus="labelUp(this)" onblur="labelDown(this)" required />
+                </div>
+              </div>
+              <div class="col col-sm-12 col-md-12 col-lg-6 m-0">
+                <div class="form-group">
+                  <button type="button" id="nick_check_button" class="btn btn-primary register_btn w-100">중복확인</button>
+                </div>
+              </div>
             </div>
             <div class="row">
               <div class="col col-sm-12 col-md-12 col-lg-6 m-0">

@@ -27,6 +27,11 @@ public class userServiceImpl implements userService {
     }
 
     @Override
+    public String nick_check(HashMap<String, String> param) {
+        return dao.nick_check(param);
+    }
+
+    @Override
     public void userSignUp(HashMap<String, String> param) {
         dao.userSignUp(param);
     }
