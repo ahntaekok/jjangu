@@ -39,7 +39,7 @@ public class user_con {
     public String loginOk(@RequestParam HashMap<String, String> param){
 
         System.out.println("아이디 : "+ param.get("u_id"));
-        System.out.println("비밀번호 : "+ param.get("u_pw"));
+        session.setAttribute("u_id", param.get("u_id"));
 
         return "board/boardList";
     }
@@ -47,7 +47,7 @@ public class user_con {
     @RequestMapping("/signUp")
     public String signUp(@RequestParam HashMap<String, String> param){
         param.get("u_nickname");
-        ;
+
         service.userSignUp(param);
 
         return "user/login";

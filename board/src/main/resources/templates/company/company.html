@@ -1,0 +1,42 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>짱구's 굿즈</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/list.css}">
+  <script th:src="@{/js/signUpScript.js}" type="text/javascript"></script>
+</head>
+<body>
+    <div th:replace="/HF/header.html :: body"></div>
+
+        <h2 class="title"  align="center">소 개</h2>
+        <div class="board">
+            <p align="center"> 본 사이트는 짱구의 팬 사이트로써 짱구의 소식을 알려드리고<br>
+                회원분들의 게시판 소통하는 사이트입니다.</p>
+        </div>
+        <h2 class="title"  align="center">오시는 길</h2>
+        <div id="map" style="width:500px;height:400px; margin:auto;">
+        </div>
+
+        <br>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=34b8ad49d9a54a6cfec6a032b0406eee&libraries=services"></script>>
+    <script>
+        var marker = {
+            position: new kakao.maps.LatLng(35.16793006770517, 128.8138125394794),
+            text: '율하2로 126번길 39' // text 옵션을 설정하면 마커 위에 텍스트를 함께 표시할 수 있습니다
+        };
+
+        var staticMapContainer  = document.getElementById('map'), // 이미지 지도를 표시할 div
+        staticMapOption = {
+            center: new kakao.maps.LatLng(35.16793006770517, 128.8138125394794), // 이미지 지도의 중심좌표
+            level: 3, // 이미지 지도의 확대 레벨
+            marker: marker // 이미지 지도에 표시할 마커
+        };
+
+    // 이미지 지도를 생성합니다
+    var staticMap = new kakao.maps.StaticMap(staticMapContainer, staticMapOption);
+    </script>
+    <div th:replace="HF/footer.html :: footer"></div>
+</body>
+</html>
