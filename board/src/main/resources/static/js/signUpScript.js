@@ -1,16 +1,143 @@
-    function goBack() {
-        window.location.href="login";
+    var id_check_yn = false;
+    var nick_check_yn = false;
+    var pw_check_yn = false;
+
+function signup_submit() {
+    if(id_check_yn == false){
+        alert('아이디 중복확인 해주세요.');
+        return false;
     }
+    if(nick_check_yn == false){
+        alert('닉네임 중복확인 해주세요.');
+        return false;
+    }
+    if(pw_check_yn == false){
+        alert('비밀번호 일치 시켜주세요.');
+        return false;
+    }
+    $('#signup_form').submit();
+}
 
-    function validateForm() {
-        var password = document.getElementById("u_pw").value;
-        var confirmPassword = document.getElementById("u_pw_confirm").value;
+document.addEventListener("DOMContentLoaded", function() {
+  var pwdInput = document.getElementById("signup_password");
+  var cPassInput = document.getElementById("cpass");
+  var resultLabel = document.getElementById("passwordMatchLabel");
 
-        if ((password !== confirmPassword) && password!="") {
-            alert("비밀번호가 일치하지 않습니다.");
-            return false;
+  pwdInput.addEventListener("keyup", function() {
+    checkPasswordMatch();
+  });
+
+  cPassInput.addEventListener("keyup", function() {
+    checkPasswordMatch();
+  });
+
+  function checkPasswordMatch() {
+    var password = pwdInput.value;
+    var confirmPassword = cPassInput.value;
+
+    if(password === "" && confirmPassword === ""){
+      resultLabel.textContent = "비밀번호 확인";
+      resultLabel.style.color = "#555555";
+      return false;
+    }
+    if (password === confirmPassword) {
+      resultLabel.textContent = "비밀번호가 일치합니다.";
+      resultLabel.style.color = "green";
+      pw_check_yn = true;
+    } else {
+      resultLabel.textContent = "비밀번호가 일치하지 않습니다.";
+      resultLabel.style.color = "red";
+      pw_check_yn = false;
+    }
+  }
+});
+
+$(document).ready(function() {
+  $('#check_button').click(function() {
+    var resultLabel = $("#signup_ID_OK");
+    var u_name = $('#signup_ID').val(); // 입력된 이름 값 가져오기
+    if(u_name===""){
+        resultLabel.text("아이디를 입력하세요");
+        resultLabel.css("color", "red");
+        return false;
+    }
+    // AJAX 요청 설정
+    $.ajax({
+      type: 'POST', // HTTP 요청 방식 설정 (GET 또는 POST)
+      url: 'id_check', // 요청을 보낼 URL
+      data: { u_name: u_name }, // 전송할 데이터 설정
+      success: function(response) {
+        if(response == 202){
+          resultLabel.text("아이디 사용 가능합니다.");
+          resultLabel.css("color", "green");
+          id_check_yn = true;
+        } else {
+          resultLabel.text("아이디 중복입니다.");
+          resultLabel.css("color", "red");
         }
+      },error: function() {
+                alert('에러가 발생했습니다.'); // 에러 시 처리
+              }
+    });
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var idInput = document.getElementById("signup_ID");
+  var resultLabel = $("#signup_ID_OK");
+
+  idInput.addEventListener("keyup", function() {
+    if(id_check_yn == true){
+        id_check_yn = false;
+        resultLabel.text("아이디 다시 검사하세요");
+        resultLabel.css("color", "red");
     }
+  });
+});
+
+$(document).ready(function() {
+  $('#nick_check_button').click(function() {
+    var resultLabel = $("#signup_nick_OK");
+    var u_nickname = $('#signup_nick').val(); // 입력된 이름 값 가져오기
+    if(u_nickname===""){
+        resultLabel.text("닉네임을 입력하세요");
+        resultLabel.css("color", "red");
+        return false;
+    }
+    // AJAX 요청 설정
+    $.ajax({
+      type: 'POST', // HTTP 요청 방식 설정 (GET 또는 POST)
+      url: 'nick_check', // 요청을 보낼 URL
+      data: { u_nickname: u_nickname }, // 전송할 데이터 설정
+      success: function(response) {
+        if(response == 202){
+          resultLabel.text("닉네임 사용 가능합니다.");
+          resultLabel.css("color", "green");
+          nick_check_yn = true;
+        } else {
+          resultLabel.text("닉네임 중복입니다.");
+          resultLabel.css("color", "red");
+        }
+      },error: function() {
+                alert('에러가 발생했습니다.'); // 에러 시 처리
+              }
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  var resultLabel = $("#signup_nick_OK");
+  var idInput = document.getElementById("signup_nick");
+
+  idInput.addEventListener("keyup", function() {
+    if(nick_check_yn == true){
+        nick_check_yn = false;
+        resultLabel.text("닉네임 다시 검사하세요");
+        resultLabel.css("color", "red");
+    }
+  });
+});
 
     function execDaumPostcode() {
         new daum.Postcode({
